@@ -37,7 +37,7 @@ public class NuevoElementoFragment extends Fragment {
                 String nombre = binding.nombre.getText().toString();
                 String descripcion = binding.descripcion.getText().toString();
 
-                elementosViewModel.anyadirElemento(new Elemento(nombre, descripcion));
+                elementosViewModel.insertarElemento(new Elemento(nombre, descripcion));
 
                 navController.popBackStack();
             }

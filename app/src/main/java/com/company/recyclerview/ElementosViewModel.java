@@ -32,8 +32,8 @@ public class ElementosViewModel extends AndroidViewModel {
         elementoSeleccionado.setValue(elemento);
     }
 
-    void anyadirElemento(Elemento elemento){
-        elementosRepositorio.anyadir(elemento, new ElementosRepositorio.Callback() {
+    void insertarElemento(Elemento elemento){
+        elementosRepositorio.insertar(elemento, new ElementosRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Elemento> elementos) {
                 listaElementos.setValue(elementos);
