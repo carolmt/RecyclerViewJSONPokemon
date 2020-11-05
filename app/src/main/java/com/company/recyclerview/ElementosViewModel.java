@@ -41,8 +41,8 @@ public class ElementosViewModel extends AndroidViewModel {
         });
     }
 
-    void eliminarElemento(int posicion){
-        elementosRepositorio.eliminar(posicion, new ElementosRepositorio.Callback() {
+    void eliminarElemento(Elemento elemento){
+        elementosRepositorio.eliminar(elemento, new ElementosRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Elemento> elementos) {
                 listaElementos.setValue(elementos);

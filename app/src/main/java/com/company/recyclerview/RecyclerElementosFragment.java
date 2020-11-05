@@ -66,7 +66,8 @@ public class RecyclerElementosFragment extends Fragment {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int posicion = viewHolder.getAdapterPosition();
-                elementosViewModel.eliminarElemento(posicion);
+                Elemento elemento = elementosAdapter.obtenerElemento(posicion);
+                elementosViewModel.eliminarElemento(elemento);
 
             }
         }).attachToRecyclerView(binding.recycler);
@@ -123,6 +124,10 @@ public class RecyclerElementosFragment extends Fragment {
         public void establecerLista(List<Elemento> elementos){
             this.elementos = elementos;
             notifyDataSetChanged();
+        }
+
+        public Elemento obtenerElemento(int posicion){
+            return elementos.get(posicion);
         }
     }
 

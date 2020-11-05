@@ -25,8 +25,8 @@ public class ElementosRepositorio {
         callback.cuandoFinalice(elementos);
     }
 
-    void eliminar(int posicion, Callback callback) {
-        elementos.remove(posicion);
+    void eliminar(Elemento elemento, Callback callback) {
+        elementos.remove(elemento);
         callback.cuandoFinalice(elementos);
     }
 }
