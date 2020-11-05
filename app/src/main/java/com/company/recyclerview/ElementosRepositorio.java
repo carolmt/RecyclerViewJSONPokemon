@@ -7,6 +7,7 @@ public class ElementosRepositorio {
 
     List<Elemento> elementos = new ArrayList<>();
 
+
     interface Callback {
         void cuandoFinalice(List<Elemento> elementos);
     }
@@ -28,5 +29,9 @@ public class ElementosRepositorio {
     void eliminar(Elemento elemento, Callback callback) {
         elementos.remove(elemento);
         callback.cuandoFinalice(elementos);
+    }
+
+    public void actualizarValoracion(Elemento elemento, float valoracion) {
+        elemento.valoracion = valoracion;
     }
 }

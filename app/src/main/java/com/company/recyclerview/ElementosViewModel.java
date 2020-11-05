@@ -49,4 +49,8 @@ public class ElementosViewModel extends AndroidViewModel {
             }
         });
     }
+
+    void actualizarValoracionElemento(Elemento elemento, float valoracion){
+        elementosRepositorio.actualizarValoracion(elemento, valoracion);
+    }
 }
