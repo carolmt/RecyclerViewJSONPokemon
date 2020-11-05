@@ -28,10 +28,6 @@ public class ElementosViewModel extends AndroidViewModel {
         return listaElementos;
     }
 
-    void seleccionar(Elemento elemento){
-        elementoSeleccionado.setValue(elemento);
-    }
-
     void insertar(Elemento elemento){
         elementosRepositorio.insertar(elemento, new ElementosRepositorio.Callback() {
             @Override
@@ -52,5 +48,13 @@ public class ElementosViewModel extends AndroidViewModel {
 
     void actualizar(Elemento elemento, float valoracion){
         elementosRepositorio.actualizar(elemento, valoracion);
+    }
+
+    void seleccionar(Elemento elemento){
+        elementoSeleccionado.setValue(elemento);
+    }
+
+    MutableLiveData<Elemento> seleccionado(){
+        return elementoSeleccionado;
     }
 }
