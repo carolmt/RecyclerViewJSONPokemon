@@ -52,7 +52,7 @@ public class RecyclerElementosFragment extends Fragment {
 
         binding.recycler.setAdapter(elementosAdapter);
 
-        binding.recycler.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        binding.recycler.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.UP | ItemTouchHelper.DOWN,
@@ -67,12 +67,12 @@ public class RecyclerElementosFragment extends Fragment {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int posicion = viewHolder.getAdapterPosition();
                 Elemento elemento = elementosAdapter.obtenerElemento(posicion);
-                elementosViewModel.eliminarElemento(elemento);
+                elementosViewModel.eliminar(elemento);
 
             }
         }).attachToRecyclerView(binding.recycler);
 
-        elementosViewModel.obtenerListaElementos().observe(getViewLifecycleOwner(), new Observer<List<Elemento>>() {
+        elementosViewModel.obtenerElementos().observe(getViewLifecycleOwner(), new Observer<List<Elemento>>() {
             @Override
             public void onChanged(List<Elemento> elementos) {
                 elementosAdapter.establecerLista(elementos);
@@ -102,7 +102,7 @@ public class RecyclerElementosFragment extends Fragment {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     if(fromUser) {
-                        elementosViewModel.actualizarValoracionElemento(elemento, rating);
+                        elementosViewModel.actualizar(elemento, rating);
                     }
                 }
             });
