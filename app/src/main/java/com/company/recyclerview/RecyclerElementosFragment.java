@@ -110,7 +110,7 @@ public class RecyclerElementosFragment extends Fragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    elementosViewModel.establecerElementoSeleccionado(elemento);
+                    elementosViewModel.seleccionar(elemento);
                     navController.navigate(R.id.action_recyclerElementosFragment_to_mostrarElementoFragment);
                 }
             });
