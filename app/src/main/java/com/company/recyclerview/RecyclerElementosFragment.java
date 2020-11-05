@@ -72,7 +72,7 @@ public class RecyclerElementosFragment extends Fragment {
             }
         }).attachToRecyclerView(binding.recycler);
 
-        elementosViewModel.obtenerElementos().observe(getViewLifecycleOwner(), new Observer<List<Elemento>>() {
+        elementosViewModel.obtener().observe(getViewLifecycleOwner(), new Observer<List<Elemento>>() {
             @Override
             public void onChanged(List<Elemento> elementos) {
                 elementosAdapter.establecerLista(elementos);

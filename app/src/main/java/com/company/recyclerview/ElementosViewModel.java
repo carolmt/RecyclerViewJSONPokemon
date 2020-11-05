@@ -24,7 +24,7 @@ public class ElementosViewModel extends AndroidViewModel {
     }
 
 
-    MutableLiveData<List<Elemento>> obtenerListaElementos(){
+    MutableLiveData<List<Elemento>> obtener(){
         return listaElementos;
     }
 
