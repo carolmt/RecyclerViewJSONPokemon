@@ -131,7 +131,7 @@ public class RecyclerElementosFragment extends Fragment {
         }
     }
 
-    class ElementoViewHolder extends RecyclerView.ViewHolder {
+    static class ElementoViewHolder extends RecyclerView.ViewHolder {
         private final ViewholderElementoBinding binding;
 
         public ElementoViewHolder(ViewholderElementoBinding binding) {

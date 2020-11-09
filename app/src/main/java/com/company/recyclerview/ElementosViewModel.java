@@ -20,7 +20,7 @@ public class ElementosViewModel extends AndroidViewModel {
 
         elementosRepositorio = new ElementosRepositorio();
 
-        listaElementos.setValue(elementosRepositorio.elementos);
+        listaElementos.setValue(elementosRepositorio.obtener());
     }
 
 
@@ -49,6 +49,7 @@ public class ElementosViewModel extends AndroidViewModel {
     void actualizar(Elemento elemento, float valoracion){
         elementosRepositorio.actualizar(elemento, valoracion);
     }
+
 
     void seleccionar(Elemento elemento){
         elementoSeleccionado.setValue(elemento);
